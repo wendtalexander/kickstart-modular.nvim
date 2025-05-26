@@ -73,6 +73,7 @@ return {
         -- By default, you may press `<c-space>` to show the documentation.
         -- Optionally, set `auto_show = true` to show the documentation after a delay.
         documentation = { auto_show = false, auto_show_delay_ms = 500 },
+        accept = { auto_brackets = { enabled = false } },
       },
 
       sources = {
@@ -91,10 +92,43 @@ return {
       -- the rust implementation via `'prefer_rust_with_warning'`
       --
       -- See :h blink-cmp-config-fuzzy for more information
-      fuzzy = { implementation = 'lua' },
+      fuzzy = { implementation = 'prefer_rust_with_warning' },
 
       -- Shows a signature help window while you type arguments for a function
       signature = { enabled = true },
+
+      cmdline = {
+        keymap = {
+          -- recommended, as the default keymap will only show and select the next item
+          ['<Tab>'] = { 'show', 'accept' },
+        },
+        completion = { menu = { auto_show = true } },
+      },
+
+      term = {
+        enabled = true,
+        keymap = { preset = 'inherit' }, -- Inherits from top level `keymap` config when not set
+        sources = {},
+        completion = {
+          trigger = {
+            show_on_blocked_trigger_characters = {},
+            show_on_x_blocked_trigger_characters = nil, -- Inherits from top level `completion.trigger.show_on_blocked_trigger_characters` config when not set
+          },
+          -- Inherits from top level config options when not set
+          list = {
+            selection = {
+              -- When `true`, will automatically select the first item in the completion list
+              preselect = nil,
+              -- When `true`, inserts the completion item automatically when selecting it
+              auto_insert = nil,
+            },
+          },
+          -- Whether to automatically show the window when new completion items are available
+          menu = { auto_show = true },
+          -- Displays a preview of the selected item on the current line
+          ghost_text = { enabled = true },
+        },
+      },
     },
   },
 }
