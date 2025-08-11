@@ -12,9 +12,8 @@ return {
       -- Load the colorscheme here
       require('rose-pine').setup {
         disable_background = true,
-	variant = "moon",
-	styles = {italic = false}
-
+        variant = 'moon',
+        styles = { italic = false },
       }
       vim.cmd.colorscheme 'rose-pine'
 

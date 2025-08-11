@@ -71,4 +71,14 @@ vim.o.scrolloff = 10
 -- See `:help 'confirm'`
 vim.o.confirm = true
 
+vim.opt.conceallevel = 1
+
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'python',
+  callback = function()
+    -- Remove ':' and '<:>' from indentkeys
+    vim.opt_local.indentkeys:remove ':'
+    vim.opt_local.indentkeys:remove '<:>'
+  end,
+})
 -- vim: ts=2 sts=2 sw=2 et
