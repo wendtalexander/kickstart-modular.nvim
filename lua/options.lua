@@ -81,4 +81,13 @@ vim.api.nvim_create_autocmd('FileType', {
     vim.opt_local.indentkeys:remove '<:>'
   end,
 })
+-- In your init.lua
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'tex',
+  callback = function()
+    vim.opt_local.tabstop = 2
+    vim.opt_local.shiftwidth = 2
+    vim.opt_local.expandtab = true
+  end,
+})
 -- vim: ts=2 sts=2 sw=2 et
