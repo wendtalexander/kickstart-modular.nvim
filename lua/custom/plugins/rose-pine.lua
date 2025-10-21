@@ -6,7 +6,7 @@ return {
     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`
     'rose-pine/neovim',
     name = 'rose-pine',
-    lazy = false, -- make sure we load this during startup if it is your main colorscheme
+    lazy = true, -- make sure we load this during startup if it is your main colorscheme
     priority = 1000, -- make sure to load this before all the other start plugins
     config = function()
       -- Load the colorscheme here
@@ -15,7 +15,7 @@ return {
         variant = 'moon',
         styles = { italic = false },
       }
-      vim.cmd.colorscheme 'rose-pine'
+      -- vim.cmd.colorscheme 'rose-pine'
 
       -- -- You can configure highlights by doing something like:
       -- vim.cmd.hi 'Comment gui=none'
