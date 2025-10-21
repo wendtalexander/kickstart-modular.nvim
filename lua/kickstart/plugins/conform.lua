@@ -34,10 +34,37 @@ return {
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         python = { 'ruff_organize_imports', 'ruff_format' },
+        quarto = { 'injected' },
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
         -- javascript = { "prettierd", "prettier", stop_after_first = true },
       },
+      -- Set to true to ignore errors
+      ignore_errors = false,
+      -- Map of treesitter language to filetype
+      lang_to_ft = {
+        bash = 'sh',
+      },
+      -- Map of treesitter language to file extension
+      -- A temporary file name with this extension will be generated during formatting
+      -- because some formatters care about the filename.
+      lang_to_ext = {
+        bash = 'sh',
+        c_sharp = 'cs',
+        elixir = 'exs',
+        javascript = 'js',
+        julia = 'jl',
+        latex = 'tex',
+        markdown = 'md',
+        python = 'py',
+        ruby = 'rb',
+        rust = 'rs',
+        teal = 'tl',
+        typescript = 'ts',
+      },
+      -- Map of treesitter language to formatters to use
+      -- (defaults to the value from formatters_by_ft)
+      lang_to_formatters = {},
     },
   },
 }
