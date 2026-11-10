@@ -72,16 +72,16 @@ vim.o.confirm = true
 vim.opt.conceallevel = 1
 
 vim.api.nvim_create_autocmd('FileType', {
-  pattern = { 'python', 'quarto' },
+  pattern = { 'python', 'quarto', 'lua', 'tex' },
   callback = function()
     -- Remove ':' and '<:>' from indentkeys
     vim.opt_local.indentkeys:remove ':'
     vim.opt_local.indentkeys:remove '<:>'
   end,
 })
--- In your init.lua
+-- -- In your init.lua
 vim.api.nvim_create_autocmd('FileType', {
-  pattern = { 'tex', 'quarto', 'markdown' },
+  pattern = { 'tex', 'quarto', 'markdown', 'lua' },
   callback = function()
     vim.opt_local.tabstop = 2
     vim.opt_local.shiftwidth = 2
