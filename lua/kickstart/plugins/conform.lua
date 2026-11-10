@@ -34,7 +34,8 @@ return {
       },
       -- You can also specify external formatters in here.
       formatters_by_ft = {
-        -- rust = { 'rustfmt' },
+        rust = { 'rustfmt', 'dioxus', lsp_format = 'fallback' },
+        -- rust = { 'rustfmt', lsp_format = 'fallback' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         python = { 'ruff_organize_imports', 'ruff_format' },
