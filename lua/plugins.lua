@@ -30,7 +30,7 @@ require 'kickstart.plugins.treesitter'
 -- NOTE: You can add your own plugins, configuration, etc. in `lua/custom/plugins/*.lua`.
 --
 -- For independent modules, uncomment the convenience loader:
--- require 'custom.plugins'
+require 'custom.plugins'
 --
 -- `custom.plugins` automatically loads files from that directory, but their
 -- order is unspecified. If plugins depend on each other, keep them in the same
@@ -40,5 +40,6 @@ require 'kickstart.plugins.treesitter'
 -- require 'custom.plugins.colorscheme'
 -- require 'custom.plugins.ui'
 -- require 'custom.plugins.git'
+-- require 'custom.plugins.oil'
 
 -- vim: ts=2 sts=2 sw=2 et

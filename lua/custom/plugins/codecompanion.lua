@@ -1,6 +1,6 @@
-return {
-  'olimorris/codecompanion.nvim',
-  version = '^19.0.0',
+local function gh(repo) return 'https://github.com/' .. repo end
+vim.pack.add { { src = gh 'olimorris/codecompanion.nvim', version = vim.version.range '19.*' } }
+require('codecompanion').setup {
   opts = {
     interactions = {
       chat = {
@@ -40,9 +40,5 @@ return {
         })
       end,
     },
-  },
-  dependencies = {
-    'nvim-lua/plenary.nvim',
-    'nvim-treesitter/nvim-treesitter',
   },
 }

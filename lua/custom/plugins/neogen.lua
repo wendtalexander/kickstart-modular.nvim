@@ -1,8 +1,8 @@
-return {
+local function gh(repo) return 'https://github.com/' .. repo end
+vim.pack.add { gh 'danymat/neogen' }
+require('neogen').setup {
   {
     'danymat/neogen',
-    -- Uncomment next line if you want to follow only stable versions
-    -- version = "*"
     config = function()
       require('neogen').setup {
         enabled = true,

@@ -1,7 +1,6 @@
-return {
-  'hat0uma/csvview.nvim',
-  ---@module "csvview"
-  ---@type CsvView.Options
+local function gh(repo) return 'https://github.com/' .. repo end
+vim.pack.add { { src = gh 'hat0uma/csvview.nvim' } }
+require('csvview').setup {
   opts = {
     parser = { comments = { '#', '//' } },
     keymaps = {
