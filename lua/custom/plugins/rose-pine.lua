@@ -11,7 +11,7 @@ return {
     config = function()
       -- Load the colorscheme here
       require('rose-pine').setup {
-        variant = 'dawn',
+        variant = 'moon',
         styles = { italic = false },
       }
       vim.cmd.colorscheme 'rose-pine'
